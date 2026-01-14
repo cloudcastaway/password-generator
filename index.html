@@ -8,11 +8,15 @@
         Generate a<br><span id="accent">random password</span>
       </h1>
       <p>Create strong, unpredictable passwords.</p>
-      <button id="generator-btn">Generate password</button>
+      <button id="generator-btn" class="clickable">Generate password</button>
       <hr id="divider" />
       <div id="password-container">
         <div id="first-password"></div>
         <div id="second-password"></div>
+      </div>
+      <div id="modal" class="hidden">
+        <button id="close-modal-btn" class="clickable">x</button>
+        <p>Copied to clipboard!</p>
       </div>
       <script src="index.js"></script>
     </div>

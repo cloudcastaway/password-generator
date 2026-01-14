@@ -17,11 +17,15 @@ The purpose of the project is to practice translating a design into code while m
 
 ## Features
 
-- Button-triggered password generation
-- Two passwords generated per action
-- Mixed character set (uppercase, lowercase, numbers, symbols)
-- Fixed-length output
-- Minimal, dark-themed interface focused on readability
+- Button-triggered password generation  
+- Two passwords generated per action  
+- Mixed character set (uppercase, lowercase, numbers, symbols)  
+- Fixed-length output  
+- Click-to-copy password functionality  
+- Visual confirmation modal after copy  
+- Dismissible modal (close button or click outside)  
+- Visual feedback on interaction (hover / active states)  
+- Minimal, dark-themed interface focused on readability  
 
 ---
 
@@ -39,16 +43,15 @@ password-generator/
 
 ## Technologies Used
 
-- HTML5
-- CSS3
-  - Flexbox
-- JavaScript (vanilla)
+- HTML5  
+- CSS3  
+  - Flexbox  
+- JavaScript (vanilla)  
 
 ---
 
 ## Planned Improvements
 
-- Copy-to-clipboard on password click
-- Toggle controls for character types (uppercase, numbers, symbols)
-- User-defined password length input
-- UI and spacing refinements
+- Toggle controls for character types (uppercase, numbers, symbols)  
+- User-defined password length input  
+- Minor UI and spacing refinements  

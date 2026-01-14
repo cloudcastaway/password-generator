@@ -9,6 +9,8 @@ const characters = [
 const firstPassword = document.getElementById("first-password");
 const secondPassword = document.getElementById("second-password");
 const generatorBtn = document.getElementById("generator-btn");
+const modal = document.getElementById("modal");
+const closeModalBtn = document.getElementById("close-modal-btn");
 
 function generatePassword() {
   let password = [];
@@ -19,7 +21,41 @@ function generatePassword() {
   return password.join("");
 }
 
+function updateCursor(element) {
+  if (element.textContent != "") {
+    element.classList.add("clickable");
+  }
+}
+
+function showModal() {
+  modal.classList.remove("hidden");
+}
+
 generatorBtn.addEventListener("click", () => {
   firstPassword.textContent = generatePassword();
   secondPassword.textContent = generatePassword();
+  updateCursor(firstPassword);
+  updateCursor(secondPassword);
+});
+
+firstPassword.addEventListener("click", (event) => {
+  event.stopPropagation();
+  navigator.clipboard.writeText(firstPassword.textContent);
+  showModal();
+});
+
+secondPassword.addEventListener("click", (event) => {
+  event.stopPropagation();
+  navigator.clipboard.writeText(secondPassword.textContent);
+  showModal();
+});
+
+closeModalBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+})
+
+window.addEventListener("click", (event) => {
+  if (modal.classList.contains("hidden")) return;
+  if (modal.contains(event.target)) return;
+  modal.classList.add("hidden");
 });

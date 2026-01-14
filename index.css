@@ -4,9 +4,11 @@ body {
     justify-content: center;
     background-color: #0E1326;
     color: #E6E8F0;
+    cursor: default;
 }
 
 #main-container {
+    position: relative;
     text-align: left;
     margin: 0 auto;
     max-width: 300px;
@@ -30,6 +32,10 @@ p {
     color: inherit;
 }
 
+#generator-btn:active {
+    background-color: #5E5A87;
+}
+
 #accent {
     color: #8B7CFF;
 }
@@ -49,8 +55,8 @@ p {
 
 #first-password,
 #second-password {
-    box-sizing: border-box;
     background-color: #141A33;
+    color: #8B7CFF;
     border-radius: 4px;
     padding: 5px 10px;
     height: 40px;
@@ -58,4 +64,38 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#first-password:active,
+#second-password:active {
+    background-color: #1C2240;
+}
+
+#modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #E6E8F0;
+    color: #8B7CFF;
+    font-weight: bolder;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+#close-modal-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #6F6A9F;
+    color: #E6E8F0;
+    border: 1px solid #6F6A9F;
+    border-radius: 4px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
