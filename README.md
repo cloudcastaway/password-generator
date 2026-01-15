@@ -20,11 +20,12 @@ The purpose of the project is to practice translating a design into code while m
 - Button-triggered password generation  
 - Two passwords generated per action  
 - Mixed character set (uppercase, lowercase, numbers, symbols)  
-- Fixed-length output  
+- User-defined password length (numeric input with enforced bounds)
+- Input normalization and clamping (min/max enforced at runtime)
 - Click-to-copy password functionality  
 - Visual confirmation modal after copy  
 - Dismissible modal (close button or click outside)  
-- Visual feedback on interaction (hover / active states)  
+- Visual feedback on interaction
 - Minimal, dark-themed interface focused on readability  
 
 ---
@@ -53,5 +54,4 @@ password-generator/
 ## Planned Improvements
 
 - Toggle controls for character types (uppercase, numbers, symbols)  
-- User-defined password length input  
 - Minor UI and spacing refinements  

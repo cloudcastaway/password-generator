@@ -18,7 +18,11 @@ h1 {
     margin-bottom: 0;
 }
 
-p {
+h2 {
+    margin-bottom: 5px;
+}
+
+#description {
     margin-top: 8px;
 }
 
@@ -27,7 +31,7 @@ p {
     border: 1px solid #6F6A9F;
     border-radius: 4px;
     padding: 7px 14px;
-    margin-top: 30px;
+    margin-top: 12px;
     margin-bottom: 12px;
     color: inherit;
 }
@@ -40,7 +44,7 @@ p {
     color: #8B7CFF;
 }
 
-#divider {
+.divider {
     border: 0;
     height: 1px;
     background: #1C2240;
@@ -62,6 +66,7 @@ p {
     height: 40px;
     flex: 0 0 140px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -98,4 +103,8 @@ p {
 
 .hidden {
     display: none;
+}
+
+#length-section {
+    display: inline;
 }

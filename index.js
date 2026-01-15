@@ -11,10 +11,12 @@ const secondPassword = document.getElementById("second-password");
 const generatorBtn = document.getElementById("generator-btn");
 const modal = document.getElementById("modal");
 const closeModalBtn = document.getElementById("close-modal-btn");
+const lengthInput = document.getElementById("length-input");
+lengthInput.value = 8;
 
 function generatePassword() {
   let password = [];
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < Number(lengthInput.value); i++) {
     const index = Math.floor(Math.random() * characters.length);
     password.push(characters[index]);
   }
@@ -59,3 +61,20 @@ window.addEventListener("click", (event) => {
   if (modal.contains(event.target)) return;
   modal.classList.add("hidden");
 });
+
+lengthInput.addEventListener("input", () => {
+  if (lengthInput.value === "") {
+    lengthInput.value = 8;
+    return;
+  }
+  const num = Number(lengthInput.value)
+  const min = Number(lengthInput.min)
+  const max = Number(lengthInput.max)
+
+  lengthInput.value = Math.floor(num);
+  if (num < min) {
+      lengthInput.value = min;
+    } else if (num > max) {
+      lengthInput.value = max;
+    }
+})

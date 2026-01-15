@@ -7,9 +7,18 @@
       <h1>
         Generate a<br><span id="accent">random password</span>
       </h1>
-      <p>Create strong, unpredictable passwords.</p>
+      <p id="description">Create strong, unpredictable passwords.</p>
+      <hr class="divider">
+      <div id="settings-section">
+        <h2>Settings:</h2>
+        <div id="length-section">
+          <label for="length-input">Password length:</label>
+          <input type="number" min="1" max="32" step="1" id="length-input">
+        </div>
+      </div>
+      <hr class="divider">
       <button id="generator-btn" class="clickable">Generate password</button>
-      <hr id="divider" />
+      <hr class="divider">
       <div id="password-container">
         <div id="first-password"></div>
         <div id="second-password"></div>
