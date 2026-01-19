@@ -12,7 +12,7 @@ const generatorBtn = document.getElementById("generator-btn");
 const modal = document.getElementById("modal");
 const closeModalBtn = document.getElementById("close-modal-btn");
 const lengthInput = document.getElementById("length-input");
-lengthInput.value = 8;
+const DEFAULT_LEN = 8;
 
 function generatePassword() {
   let password = [];
@@ -62,19 +62,26 @@ window.addEventListener("click", (event) => {
   modal.classList.add("hidden");
 });
 
-lengthInput.addEventListener("input", () => {
-  if (lengthInput.value === "") {
-    lengthInput.value = 8;
+lengthInput.addEventListener("blur", () => {
+  const raw = lengthInput.value.trim();
+
+  if (raw === "") {
+    lengthInput.value = DEFAULT_LEN;
     return;
   }
-  const num = Number(lengthInput.value)
-  const min = Number(lengthInput.min)
-  const max = Number(lengthInput.max)
 
-  lengthInput.value = Math.floor(num);
-  if (num < min) {
-      lengthInput.value = min;
-    } else if (num > max) {
-      lengthInput.value = max;
-    }
-})
+  const num = Math.floor(Number(raw));
+  const min = Number(lengthInput.min);
+  const max = Number(lengthInput.max);
+
+  if (!Number.isFinite(num)) {
+    lengthInput.value = DEFAULT_LEN;
+    return;
+  }
+
+  lengthInput.value = Math.min(max, Math.max(min, num));
+});
+
+lengthInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {lengthInput.blur()};
+});
