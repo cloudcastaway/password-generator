@@ -108,3 +108,8 @@ h2 {
 #length-section {
     display: inline;
 }
+
+#toggle-switches-section {
+    display: flex;
+    flex-direction: column;
+}
